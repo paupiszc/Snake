@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Snake
+    partial class Form1
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbCanves = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.labelGameOver = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCanves)).BeginInit();
             this.SuspendLayout();
             // 
             // pbCanves
             // 
+            this.pbCanves.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pbCanves.Location = new System.Drawing.Point(13, 13);
             this.pbCanves.Name = "pbCanves";
             this.pbCanves.Size = new System.Drawing.Size(440, 447);
             this.pbCanves.TabIndex = 0;
             this.pbCanves.TabStop = false;
+            this.pbCanves.Click += new System.EventHandler(this.pbCanves_Click);
+            this.pbCanves.Paint += new System.Windows.Forms.PaintEventHandler(this.pbCanves_Paint);
             // 
             // label1
             // 
@@ -51,6 +57,7 @@
             this.label1.Size = new System.Drawing.Size(109, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelScore
             // 
@@ -62,16 +69,31 @@
             this.labelScore.TabIndex = 2;
             this.labelScore.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Snake
+            // labelGameOver
+            // 
+            this.labelGameOver.AutoSize = true;
+            this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelGameOver.Location = new System.Drawing.Point(95, 37);
+            this.labelGameOver.Name = "labelGameOver";
+            this.labelGameOver.Size = new System.Drawing.Size(102, 37);
+            this.labelGameOver.TabIndex = 3;
+            this.labelGameOver.Text = "label2";
+            this.labelGameOver.Visible = false;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 517);
+            this.Controls.Add(this.labelGameOver);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCanves);
-            this.Name = "Snake";
-            this.Text = "Snake";
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Snake_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbCanves)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -83,6 +105,8 @@
         private System.Windows.Forms.PictureBox pbCanves;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelScore;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label labelGameOver;
     }
 }
 
