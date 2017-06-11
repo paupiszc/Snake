@@ -101,13 +101,10 @@ namespace Snake
 
         private void pbCanves_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void pbCanves_Paint(object sender, PaintEventArgs e)
         {
@@ -230,6 +227,11 @@ namespace Snake
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             Input.ChangeState(e.KeyCode, false);
+        }
+
+        private void labelGameOver_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -57,7 +57,7 @@
             this.label1.Size = new System.Drawing.Size(109, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // labelScore
             // 
@@ -73,12 +73,13 @@
             // 
             this.labelGameOver.AutoSize = true;
             this.labelGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelGameOver.Location = new System.Drawing.Point(95, 37);
+            this.labelGameOver.Location = new System.Drawing.Point(86, 59);
             this.labelGameOver.Name = "labelGameOver";
             this.labelGameOver.Size = new System.Drawing.Size(102, 37);
             this.labelGameOver.TabIndex = 3;
             this.labelGameOver.Text = "label2";
             this.labelGameOver.Visible = false;
+            this.labelGameOver.Click += new System.EventHandler(this.labelGameOver_Click);
             // 
             // Form1
             // 
